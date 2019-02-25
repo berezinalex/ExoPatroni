@@ -1,0 +1,73 @@
+---
+- name: Configure and install patroni claster
+  hosts: etcd
+  become: True
+  tasks:
+    - name: install etcd
+      apt:
+        name: etcd
+        update_cache: yes
+    - name: copy "etcd config file"
+      copy:
+        src: /files/etcd
+        dest: /etc/default
+    - file:
+        path: /data/etcd
+        state: directory
+        owner: etcd
+        group: etcd
+    - name: restart etcd
+      service:
+         name: etcd
+         state: restarted
+    - name: install haproxy
+      apt:
+        name: haproxy
+        update_cache: yes
+    - name: copy haproxy config file
+      copy: src=/files/haproxy.cfg   dest=/etc/haproxy/
+    - name: restart haproxy
+      service: name=haproxy state=restarted
+- name: add postgresql key apt
+  hosts: patroni
+  become: true
+  become_user: root
+  become_method: sudo
+  gather_facts: false
+  tasks:
+    - name: apt key posgres11
+      apt_key:
+           url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+           state: present
+    - name: add repository
+      apt_repository:
+           repo: deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+           state: present
+- name: Install PostgreSQL 11
+  hosts: patroni_1
+  become: true
+  tasks:
+    - name: install postgres
+      apt:
+        name: postgresql-11
+        update_cache: yes
+    - name: restart psql
+      service:
+         name: postgresql
+         state: stopped
+- name: Configure Patroni
+  hosts: patroni_1
+  become: True
+  tasks:
+    - name: install patroni
+      apt:
+        name: patroni
+        update_cache: yes
+    - name: copy "etcd config file"
+      copy:
+        src: /files/work/patroni1.yml
+        dest: /etc/patroni/config.yml
+    - name: start patroni
+      service:
+         name: patroni
+         state: started

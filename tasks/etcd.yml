@@ -1,0 +1,18 @@
+---
+- name: Configure etcd
+  hosts: etcd
+  become: True
+  tasks:
+    - name: install etcd
+      apt:
+        name: etcd
+        update_cache: yes
+    - name: copy "etcd config file"
+      template:
+        src: etcd.yml.j2
+        dest: /etc/default
+    - file:
+        path: /data/etcd
+        state: directory
+        owner: etcd
+        group: etcd

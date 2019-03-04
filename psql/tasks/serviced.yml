@@ -1,0 +1,7 @@
+---
+# handlers file for psql
+- name: stopped psql
+  service:
+     state: stopped
+     daemon_reload: yes
+     name: postgresql

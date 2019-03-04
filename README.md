@@ -1,2 +1,0 @@
-# ExoPatroni
-setup patroni

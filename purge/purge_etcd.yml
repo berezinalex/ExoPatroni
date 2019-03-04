@@ -1,0 +1,30 @@
+---
+- name: Purge Etcd
+  hosts: etcd
+  become: True
+  tasks:
+    - name: Remove etcd
+      apt:
+        name: etcd
+        state: absent
+        purge: yes
+        force: yes
+        update_cache: yes
+    - name: Remove etcd-server
+      apt:
+        name: etcd-server
+        state: absent
+        purge: yes
+        force: yes
+        update_cache: yes
+    - name: Remove autoremove
+      apt:
+        autoremove: yes
+    - name: delete "etcd config file"
+      file:
+        path: /etc/default/etcd
+        state: absent
+    - name: delete "etcd dir"
+      file:
+        path: /data
+        state: absent

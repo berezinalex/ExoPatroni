@@ -1,0 +1,6 @@
+---
+# handlers file for patroni
+- name: start patroni
+  service:
+     name: patroni
+     state: started

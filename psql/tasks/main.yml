@@ -1,0 +1,6 @@
+---
+# tasks file for psql
+- include_tasks: configure_apt.yml
+- include_tasks: install.yml
+#- include_tasks: serviced.yml
+#- include_tasks: user_passwd.yml

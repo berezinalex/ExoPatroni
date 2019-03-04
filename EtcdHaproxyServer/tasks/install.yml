@@ -1,0 +1,10 @@
+---
+# tasks file for EtcdHaproxyServer
+- name: install etcd
+  apt:
+    name: etcd
+    update_cache: yes
+- name: install haproxy
+  apt:
+    name: haproxy
+    update_cache: yes

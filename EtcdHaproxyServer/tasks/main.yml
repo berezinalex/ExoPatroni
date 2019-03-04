@@ -1,0 +1,5 @@
+---
+# tasks file for EtcdHaproxyServer
+- include_tasks: install.yml
+- include_tasks: configure.yml
+- include_tasks: serviced.yml

@@ -1,0 +1,5 @@
+---
+#Run All 
+- import_playbook: purge_etcd.yml
+- import_playbook: purge_patroni.yml
+- import_playbook: purge_psql.yml

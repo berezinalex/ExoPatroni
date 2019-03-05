@@ -1,0 +1,7 @@
+---
+# handlers file for dcs
+- name: restarted etcd
+  service:
+     state: restarted
+     daemon_reload: yes
+     name: etcd

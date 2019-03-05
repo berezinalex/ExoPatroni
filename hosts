@@ -1,0 +1,10 @@
+[etcd]
+172.74.130.155 ansible_connection=ssh   ansible_user=paladin ansible_sudo_pass=guru45
+[psql]
+172.74.130.156 ansible_connection=ssh   ansible_user=paladin ansible_sudo_pass=guru45
+172.74.130.157 ansible_connection=ssh   ansible_user=paladin ansible_sudo_pass=guru45
+[patroni_beta]
+172.74.130.156 ansible_connection=ssh   ansible_user=paladin ansible_sudo_pass=guru45
+[patroni_gamma]
+172.74.130.157 ansible_connection=ssh   ansible_user=paladin ansible_sudo_pass=guru45
+

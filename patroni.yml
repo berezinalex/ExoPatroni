@@ -1,0 +1,5 @@
+---
+- hosts: psql
+  become: true
+  roles:
+     - patroni

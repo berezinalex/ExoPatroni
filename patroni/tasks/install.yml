@@ -1,0 +1,6 @@
+---
+# tasks file for patroni
+- name: Install Patroni
+  apt:
+    name: patroni
+    update_cache: yes

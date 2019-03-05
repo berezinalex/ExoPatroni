@@ -1,0 +1,4 @@
+---
+# handlers file for psql
+- name: Change Postgres Password
+  user: name=postgres state=present password=zalando

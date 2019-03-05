@@ -1,0 +1,8 @@
+---
+# tasks file for patroni
+- name: copy "pgpass config file"
+  copy:
+    src: 11-ExoTanks.pgpass
+    dest: /var/lib/postgresql/11-ExoTanks.pgpass
+    owner: postgres
+    group: postgres

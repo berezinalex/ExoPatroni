@@ -1,7 +1,0 @@
----
-- hosts: etcd
-  tasks:
-    - authorized_key:
-       user: charlie
-       state: present
-       key: "{{ lookup('file', '/home/root/.ssh/id_rsa.pub') }}"

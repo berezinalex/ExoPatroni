@@ -1,4 +1,0 @@
----
-- name: etcd install
-  roles:
-     - EtcdHaproxyServer

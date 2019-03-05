@@ -1,5 +1,4 @@
 ---
-- hosts: etcd
-  become: true
+- name: etcd install
   roles:
      - EtcdHaproxyServer

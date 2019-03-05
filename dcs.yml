@@ -1,4 +1,5 @@
 ---
-- become: true
+- Hosts: etcd
+  become: true
   roles:
      - dcs

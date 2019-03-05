@@ -1,5 +1,5 @@
 ---
 #Run All
-- import_playbook: ExoPatroni.yml
+- import_playbook: dcs.yml
 - import_playbook: psql.yml
 - import_playbook: patroni.yml

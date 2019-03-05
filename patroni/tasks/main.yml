@@ -1,8 +1,0 @@
----
-# tasks file for patroni
-- include_tasks: install.yml
-- include_tasks: configure_beta.yml
-#  when: ansible_facts['ansible_hostname']=="beta"
-- include_tasks: configure_gamma.yml
-#  when: ansible_facts['ansible_hostname']=="gamma"
-#- include_tasks: configure_pgpass.yml

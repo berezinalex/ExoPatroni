@@ -1,7 +1,0 @@
----
-# handlers file for EtcdHaproxyServer
-- name: restarted etcd
-  service:
-     state: restarted
-     daemon_reload: yes
-     name: patroni

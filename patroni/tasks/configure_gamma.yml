@@ -1,8 +1,0 @@
----
-# tasks file for patroni
-
-- name: Configure Patroni
-  copy:
-    src: ./files/gamma/config.yml
-    dest: /etc/patroni
-  when: ansible_facts["hostname"]=="gamma"

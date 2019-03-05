@@ -1,8 +1,0 @@
----
-# tasks file for patroni
-
-- name: Configure Patroni
-  copy:
-    src: ./files/beta/config.yml
-    dest: /etc/patroni
-  when: ansible_facts['hostname']=="beta"

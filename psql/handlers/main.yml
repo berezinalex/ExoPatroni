@@ -1,9 +1,0 @@
----
-# handlers file for psql
-- name: stop psql
-  service:
-     name: postgresql
-     state: stopped
-
-#- name: disables psql
-#  command: systemctl disable postgresql

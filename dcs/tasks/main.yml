@@ -1,5 +1,0 @@
----
-# tasks file for dcs
-- include_tasks: install.yml
-- include_tasks: configure.yml
-- include_tasks: serviced.yml

@@ -1,6 +1,0 @@
----
-#install psql 11
-- name: Install PostgreSQL 11
-  apt:
-    name: postgresql-11
-    update_cache: yes
